@@ -1,0 +1,951 @@
+/* Estilos generales */
+
+@font-face {
+    font-family: 'Unna';
+    src: url("../Fonts/Unna/Unna-Italic.ttf")
+}
+* {
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    font-family: 'Unna';   
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    color: rgb(253, 253, 253);
+}
+
+/* Burguer MENU */
+label {
+    margin: 0;
+    font-size: 40px;
+    line-height:50px;
+    display: flex;
+    float: right;
+    color: rgb(211, 158, 42);
+    margin-right: 10px;
+  }
+  
+  #toggle {
+    display: none;
+  }
+  a {
+      color: rgb(195, 156, 48);
+      text-decoration: none;
+  }
+  a:hover {
+      opacity: 0.5;
+  }
+
+/* Scroll */
+::-webkit-scrollbar {
+    background: rgb(0, 0, 0);
+}
+
+
+/* MOBILE FIRST */
+/* SMARTPHONE */
+@media (max-width: 480px){
+    
+    
+
+   
+    h1 {
+        font-size: 3rem;
+    }
+    .border {
+        border: solid 1px rgb(0, 0, 0);
+    }
+    span {
+        
+        color: #000;
+                
+            font-size: 1rem;
+    }
+    span:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    
+    article {
+        background-color: rgb(0, 0, 0);
+        
+        
+        text-align: center;
+    }
+    article h3 {
+        padding: 15px 0;
+        font-size: 2rem;
+        
+    }
+    .slider{
+        width: 100%;
+        margin:auto;
+        overflow: hidden;
+       
+    }
+    .slider ul{
+        display: flex;
+        padding: 0;
+        width: 400%;
+        animation: cambio 20s infinite;
+        
+    }
+    .slider li{
+        list-style: none;
+        padding-left: 2.5%;
+        padding-right: 9%;
+        flex-wrap: wrap
+    ;
+    
+    
+    }
+
+    @keyframes cambio{
+        0% { margin-left:0;}
+        20% { margin-left:0;}
+        40% { margin-left: -100%;}
+        80% { margin-left:-100%;}
+    }
+
+    
+    .articulo {
+        width: 100%;
+    }
+   
+    /* MENU */
+    label {
+        display: block;
+        cursor: pointer;
+      }
+    
+    /*****************
+    GRIDS por AREAS
+    **************** */
+    #grid-area {
+        display: grid;
+        /* estructura grid por areas */
+        grid-template-areas:
+        /* 1 columna y n filas */
+        "cabeza"
+        "menu"/* fila 1 */
+        "videofrase"/* fila 2 */
+        "botoncontrat"
+        "servicios"/* fila 3 */
+        "pie"/* fila 4 */
+         ;
+         grid-template-columns: 100%;
+         grid-template-rows: 1fr 1fr 1fr 200px 500px 1fr;
+        
+    
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 0px;
+    }
+    /* Nombrar cada area */
+    header {
+        grid-area: cabeza;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: left;
+        align-content: center;
+        background-color: #000;
+        background-repeat: no-repeat;
+        background-size: cover;
+     }
+     footer {
+        grid-area: pie;
+        
+        
+        
+        
+     }
+     
+     
+    #videofrase {
+        grid-area: videofrase;   
+        display: flex;
+        flex-flow: column nowrap;
+        background-color: rgb(94, 71, 9);
+        color: rgb(255, 255, 255);
+        
+     }
+    #servicios {
+        grid-area: servicios;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        background-color: rgb(0, 0, 0); 
+         display: inline;
+        
+      }
+
+
+    .triangle{
+        width: 0;
+        height: 0;
+        border-right: 10vh solid transparent;
+        border-top: 10vh solid transparent;
+        border-left: 25vh solid #271501;
+        border-bottom:40vh solid #3f2a0d;
+        z-index: 1;
+        position:absolute;
+    
+       
+
+     }
+
+     .texto{
+         
+        
+         width:44vw;
+         text-align: justify;
+         padding-left: 20px;
+         z-index:2;
+         position: absolute;
+         margin-top: 70px;
+        
+        
+         
+     }
+     .fotodj{
+                 
+         float: right;
+         width: 20vh;
+         z-index: 3;
+         position: absolute;
+         
+         
+     }
+     .texto p {
+         padding-top: 20px;
+     }
+     nav {
+        grid-area: menu;
+        line-height: 40px;
+        
+     }
+     .menu {
+        text-align: center;
+        display: none;
+        margin-top: 50px;
+        font-family: 'Unna';
+        
+
+        
+      }
+      .logo{
+        width: 15rem;}
+      #toggle:checked + .menu {
+        display: flex;
+        flex-flow: column nowrap;
+        
+      }
+     
+      
+     aside {
+        grid-area: botoncontrat;
+        text-align: center;
+     }
+    .botoncontrat{
+        border:2px solid rgb(166, 89, 6);
+
+        background: radial-gradient(#4a2d03, #231300);
+        margin-left: 6rem;
+        margin-right: 6rem;
+        margin-top: 3.5rem;
+        padding-top: 0.5rem;padding-bottom: 0.5rem;
+        border-radius: 5px;
+    }
+    .contact_form{
+        background-color: #311d01;
+        padding-top: 5vh;
+
+    }
+    input{
+        background-color: #fbfbfb; 
+        width: 95vw; 
+        height: 50px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 3px; 
+        border-color: #6b3203; 
+        margin-top: 10px;
+        margin-left: 10px;  
+        padding-left: 10px;
+          margin-bottom: 20px; 
+        }
+          
+        
+        label{
+          display: block; 
+        float: left; 
+        font-size: x-large;
+        margin-left: 5vw
+        ;
+        }
+        
+        
+        button{
+        height: 45px; 
+        padding-left: 10px;
+        padding-right: 10px; 
+        margin-bottom: 60px; 
+        margin-top: 10px; 
+        margin-left: 10px;
+        font-family: 'Unna';
+        background-color: #6b3203; 
+        border-color: #6b3203; 
+        border-style: solid; 
+        border-radius: 10px;
+        width: 95vw;   
+          cursor: pointer;
+        }
+        
+        
+        button p{
+        color: #fff; 
+        }
+        
+        
+        span{
+        color: #ffffff; 
+        }
+        
+        
+        .aviso{
+        font-size: 2vh;  
+        color: #ffffff;  
+        }
+        
+        
+        div h1{
+        font-size: xx-large; 
+        font-family: 'Unna'; 
+        text-align: center; 
+        padding-bottom: 10px; 
+        color: #ffffff;
+        }
+        
+        
+        div h2{
+        font-size: 20px; 
+        padding-bottom: 30px;
+        color: #ffffff;
+        font-family: 'Unna';   
+        text-align: center;
+        }
+        
+        
+        p{
+        font-size: 2vh; 
+        color: #ffffff; 
+        font-family: 'Unna'
+    
+        }
+        
+        
+        ::-webkit-input-placeholder {
+         color: #a8a8a8;
+         font-size: medium;
+        }
+        
+        
+        ::-webkit-textarea-placeholder {
+         color: #a8a8a8;
+        }
+        
+        
+        .formulario input:focus{
+        outline:0;
+        border: 3px solid #97d848;
+        }
+        
+        
+        .formulario textarea:focus{
+        outline:0;
+        border: 3px solid #97d848;
+        }
+    
+}
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 1023px){
+    header, nav, #productos, #servicios, aside, footer {
+        padding: 30px 10px;
+    }
+    h1 {
+        font-size: 3rem;
+        margin-left: 5px;
+    }
+     
+    .border {
+        border: solid 1px black;
+    }
+    span {
+        background-image: linear-gradient( to top left, rgb(33, 23, 4), rgb(88, 47, 4));
+       
+        padding: 10px 20px;
+    
+        font-size: 2rem;
+        
+    }
+    span:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    article {
+        background-color: rgb(68, 39, 3);
+        border-radius: 4px;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+    }
+    article h3 {
+        padding: 40px 0;
+        font-size: 3rem;
+        
+    }
+    h3{
+        font-size: 2rem;
+    }
+    article p {
+        text-align: justify;
+    }
+    .articulo {
+        width: 100%;
+    }
+    label{
+        color: #000;
+    }
+    .logo{
+        width: 15rem;
+    }
+    .texto{
+         
+        
+        padding-left: 15vw;
+        padding-right: 15vw;
+        text-align: center;
+        align-content: center;
+        
+        margin-top: 70px;
+        font-size: xx-large;
+    
+    }
+        .texto p {
+            padding-top: 20px;}
+    .menu {
+        display: flex;
+        margin-left: 5vw;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        
+      }
+    .fotodj{
+        width: 50vw;
+    }
+    /*****************
+    GRIDS por AREAS
+    **************** */
+    #grid-area {
+        display: grid;
+        /* estructura grid por areas */
+        grid-template-areas:
+        /* 2 columna y n filas */
+        "cabeza"
+        "menu"/* fila 1 */
+        
+        "productos"/* fila 2 */
+        "servicios"
+        "lateral"/* fila 3 */
+        "pie"
+         ;
+         grid-template-columns: 100%;
+         grid-template-rows: 1fr 2fr 3fr 2fr 3fr 1fr;
+    
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+    /* Nombrar cada area */
+    header {
+        grid-area: cabeza;
+        display: flex;
+        height: 15vh;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+     }
+     footer {
+        grid-area: pie;
+        text-align: center;
+        font-size: xx-large;
+     }
+    #productos {
+        grid-area: productos;   
+        display: flex; 
+        background-color: #4a2d03;
+        color: #000;
+     }
+    #servicios {
+        grid-area: servicios;  
+        text-align: center;
+        background-color: #2b1902;
+        color: rgb(242, 221, 180); 
+     }
+     nav {
+        grid-area: menu;
+        align-content: center;
+        
+     }
+     aside {
+        grid-area: lateral;
+        text-align: center;
+        background-color: #3f2a0d;
+        color: #333;
+     }
+     .botoncontrat{
+        border:2px solid rgb(166, 89, 6);
+        margin-left: 35vw;
+        margin-right: 35vw;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        background-image: linear-gradient( to top left, rgb(33, 23, 4), rgb(127, 71, 2));}
+        .slider{
+            width: 100%;
+            margin:auto;
+            overflow: hidden;
+           
+        }
+        .slider ul{
+            display: flex;
+            padding: 0;
+            width: 400%;
+            animation: cambio 20s infinite;
+            
+        }
+        .slider li{
+            list-style: none;
+            padding-left: 5.3%;
+            padding-right: 9.5%;
+            flex-wrap: wrap
+            
+        ;
+        
+        
+        }
+    
+        @keyframes cambio{
+            0% { margin-left:0;}
+            20% { margin-left:0;}
+            40% { margin-left: -100%;}
+            80% { margin-left:-100%;}
+        }
+
+        .contact_form{
+            background-color: #311d01;
+            padding-top: 5vh;
+    
+        }
+        input{
+            background-color: #fbfbfb; 
+            width: 95vw; 
+            height: 50px; 
+            border-radius: 5px;  
+            border-style: solid; 
+            border-width: 3px; 
+            border-color: #6b3203; 
+            margin-top: 10px;
+            margin-left: 10px;  
+            padding-left: 10px;
+              margin-bottom: 20px; 
+            }
+              
+            
+            label{
+              display: block; 
+            float: left; 
+            font-size: x-large;
+            margin-left: 5vw
+            ;
+            }
+            
+            
+            button{
+            height: 45px; 
+            padding-left: 10px;
+            padding-right: 10px; 
+            margin-bottom: 60px; 
+            margin-top: 10px; 
+            margin-left: 10px;
+            font-family: 'Unna';
+            background-color: #6b3203; 
+            border-color: #6b3203; 
+            border-style: solid; 
+            border-radius: 10px;
+            width: 95vw;   
+              cursor: pointer;
+            }
+            
+            
+            button p{
+            color: #fff; 
+            }
+            
+            
+            span{
+            color: #ffffff; 
+            }
+            
+            
+            .aviso{
+            font-size: 2vh;  
+            color: #ffffff;  
+            }
+            
+            
+            div h1{
+            font-size: xx-large; 
+            font-family: 'Unna'; 
+            text-align: center; 
+            padding-bottom: 10px; 
+            color: #ffffff;
+            }
+            
+            
+            div h2{
+            font-size: 20px; 
+            padding-bottom: 30px;
+            color: #ffffff;
+            font-family: 'Unna';   
+            text-align: center;
+            }
+            
+            
+            p{
+            font-size: 2vh; 
+            color: #ffffff; 
+            font-family: 'Unna'
+        
+            }
+            
+            
+            ::-webkit-input-placeholder {
+             color: #a8a8a8;
+             font-size: medium;
+            }
+            
+            
+            ::-webkit-textarea-placeholder {
+             color: #a8a8a8;
+            }
+            
+            
+            .formulario input:focus{
+            outline:0;
+            border: 3px solid #97d848;
+            }
+            
+            
+            .formulario textarea:focus{
+            outline:0;
+            border: 3px solid #97d848;
+            }
+
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px){ 
+    header, nav, #productos, #servicios, aside, footer {
+        padding: 30px 10px;
+    }
+    h1 {
+        font-size: 3rem;
+        margin-left: 5px;
+    }
+     header h2 {
+         margin-top: 10px;
+         margin-left: 10px;
+     }
+    .border {
+        border: solid 1px black;
+    }
+    span {
+        background-image: linear-gradient( to top left, rgb(33, 23, 4), rgb(88, 47, 4));
+       
+        padding: 10px 20px;
+    
+        font-size: 2rem;
+        border-radius: 4px;
+        
+    }
+    .obligatorio{
+        font-size: 2rem;
+        background-image: none;
+        padding: 0;
+    }
+
+    span:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    label{
+        color: rgb(0, 0, 0);}
+
+    .contact_form label{
+        color:rgb(211, 158, 42);
+    }
+    
+    article {
+        background-color: #2b1902;
+        border-radius: 4px;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+    }
+    article h3 {
+        padding: 15px 0;
+        font-size: 2rem;
+        
+    }
+
+    article p {
+        text-align: justify;
+    }
+    .articulo {
+        width: 100%;
+    }
+    .menu {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+      }
+      .logo{
+        width: 15rem;}
+    
+    /*****************
+    GRIDS por AREAS
+    **************** */
+    #grid-area {
+        display: grid;
+        /* estructura grid por areas */
+        grid-template-areas:
+        /* 3 columnas y 4 filas */
+        "cabeza cabeza"/* fila 1 */
+        "menu menu"
+        "productos servicios"/* fila 2 */
+        "lateral lateral"/* fila 3 */
+        "pie pie"/* fila 4 */
+         ;
+         grid-template-columns: 70% auto;
+         grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
+    
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+    /* Nombrar cada area */
+    header {
+        grid-area: cabeza;
+        display: flex;
+        height:20vh;
+        flex-flow: row wrap;
+        justify-content: left;
+        align-content: center;
+        
+     }
+     footer {
+        grid-area: pie;
+        text-align: center;
+     }
+    #productos {
+        grid-area: productos;   
+        display: flex; 
+        background-color: #2b1902;
+        color: #000;
+     }
+    #servicios {
+        grid-area: servicios;  
+        text-align: center;
+        background-color: #2b1902;
+        color: rgb(181, 126, 17); 
+     }
+     nav {
+        grid-area: menu;
+     }
+     aside {
+        grid-area: lateral;
+        text-align: center;
+        background-color: #2b1902;
+        color: #333;
+     }
+     .fotodj{
+        width: 20vw;}
+
+        .botoncontrat{
+            border:2px solid rgb(166, 89, 6);
+            margin-left: 35vw;
+            margin-right: 35vw;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            background-image: linear-gradient( to top left, rgb(33, 23, 4), rgb(127, 71, 2));}
+
+            .slider{
+                width: 100%;
+                margin:auto;
+                overflow: hidden;
+               
+            }
+            .slider ul{
+                display: flex;
+                padding: 0;
+                width: 400%;
+                animation: cambio 20s infinite;
+                
+            }
+            .slider li{
+                list-style: none;
+                padding-left:  9.5%;
+                padding-right: 9.5%;
+                flex-wrap: wrap
+                
+            ;
+            
+            
+            }
+        
+            @keyframes cambio{
+                0% { margin-left:0;}
+                20% { margin-left:0;}
+                40% { margin-left: -100%;}
+                80% { margin-left:-100%;}
+            }
+
+            .texto{
+         
+        
+            
+                font-size: large;
+            
+            }
+                .texto p {
+                    padding-top: 20px;}
+    
+                    
+                    .contact_form{
+                        background-color: #311d01;
+                        padding-top: 5vh;
+                        margin-left: 30vw;
+                
+                    }
+                    input{
+                        background-color: #fbfbfb; 
+                        width: 38vw; 
+                        height: 50px; 
+                        border-radius: 5px;  
+                        border-style: solid; 
+                        border-width: 3px; 
+                        border-color: #6b3203; 
+                        margin-top: 10px;
+                        margin-left: 10px;  
+                        padding-left: 10px;
+                          margin-bottom: 20px; 
+                        }
+                          
+                        
+                        label{
+                          display: block; 
+                        float: left; 
+                        font-size: x-large;
+                        margin-left: 1vw
+                        ;
+                        }
+                        
+                        
+                        button{
+                        height: 45px; 
+                        padding-left: 10px;
+                        padding-right: 10px; 
+                        margin-bottom: 60px; 
+                        margin-top: 10px; 
+                        margin-left: 12px;
+                        font-family: 'Unna';
+                        background-color: #6b3203; 
+                        border-color: #6b3203; 
+                        border-style: solid; 
+                        border-radius: 10px;
+                        width: 38vw;   
+                          cursor: pointer;
+                        }
+                        
+                        
+                        button p{
+                        color: #fff; 
+                        }
+                        
+                        
+                        span{
+                        color: #ffffff; 
+                        }
+                        
+                        
+                        .aviso{
+                        font-size: 2vh;  
+                        color: #ffffff;  
+                        }
+                        
+                        
+                        div h1{
+                        font-size: xx-large; 
+                        font-family: 'Unna'; 
+                        text-align: center; 
+                        padding-bottom: 10px; 
+                        color: #ffffff;
+                        }
+                        
+                        
+                        div h2{
+                        font-size: 20px; 
+                        padding-bottom: 30px;
+                        color: #ffffff;
+                        font-family: 'Unna';   
+                        text-align: center;
+                        }
+                        
+                        
+                        p{
+                        font-size: 2vh; 
+                        color: #ffffff; 
+                        font-family: 'Unna'
+                    
+                        }
+                        
+                        
+                        ::-webkit-input-placeholder {
+                         color: #a8a8a8;
+                         font-size: medium;
+                        }
+                        
+                        
+                        ::-webkit-textarea-placeholder {
+                         color: #a8a8a8;
+                        }
+                        
+                        
+                        .formulario input:focus{
+                        outline:0;
+                        border: 3px solid #97d848;
+                        }
+                        
+                        
+                        .formulario textarea:focus{
+                        outline:0;
+                        border: 3px solid #97d848;}
+                        
+                        }

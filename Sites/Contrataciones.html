@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Lapins - Jazz Ensemble</title>
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="shortcut icon" href="../Media/favicon.ico" type="image/x-icon">
+</head>
+<body id="grid-area">
+    <header class="border">
+        
+        <a href="../index.html" >
+            <img  src="../Media/Les Lapins5 (1).png" alt="Logo Les Lapins" class="logo" >
+        </a>
+    </header>
+    <nav class="border">
+       <label for="toggle">&#9776</label>
+       <input type="checkbox" id="toggle"/>
+           <div class="menu">
+            <span ><a href="Novedades.html">Novedades</a></span>
+            <span ><a href="Calendario.html">Calendario</a></span>
+            <span ><a href="Bio.html">Bio</a></span>
+            <span><a href="Contrataciones.html">Contrataciones</a></span>
+           
+           </div>
+           
+    </nav>
+    <div class="contact_form">
+
+        <div class="formulario">
+              <h1>Formulario de contacto</h1>
+        <h2> Casamientos, Fiestas y todo tipo de Eventos</h2> 
+        
+        
+        <form action="submeter-formulario.php" method="post">
+        
+        
+        <div id="title">
+        <label for="nombre" class="colocar_nombre">Nombre
+        <span class="obligatorio">*</span>
+        </label>
+        <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribí tu nombre">
+    </div>
+        
+        <div id="title">
+        <label for="email" class="colocar_email">Email
+        <span class="obligatorio">*</span>
+        </label>
+        <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribí tu Email">
+    </div>
+        
+        <div id="title">
+        <label for="telefone" class="colocar_telefono">Teléfono
+        </label>
+        <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribí tu teléfono">
+    </div>
+                
+        <div id="title">
+        <label for="asunto" class="colocar_asunto">Asunto
+        <span class="obligatorio">*</span>
+        </label>
+        <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribí un asunto">
+    </div>
+        
+        <div id="title">
+        <label for="mensaje" class="colocar_mensaje">Mensaje
+        <span class="obligatorio">*</span>
+        </label>                     
+         <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja acá tu comentario..."></textarea> 
+    </div>  
+        
+        <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+        
+        <div class="aviso">
+        <span class="obligatorio"> * </span>los campos son obligatorios.
+        </div>
+        
+        </form>
+        </div>
+        </div>
+
+     <footer class="border">&copy 2022 - desarrollado por: <a href="#">Rafael Marrero</a></footer>
+</body>
+</html>
